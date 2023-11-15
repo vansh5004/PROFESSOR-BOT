@@ -53,10 +53,8 @@ BUTTON_LOCK = is_enabled(environ.get("BUTTON_LOCK", "True"), True)
 RemoveBG_API = environ.get("RemoveBG_API", "")
 
 # url shortner
-VERIFY = bool(environ.get('VERIFY', False))
 SHORT_URL = environ.get("SHORT_URL")
 SHORT_API = environ.get("SHORT_API")
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 
 # Message ALRT
 MSG_ALRT = environ.get('MSG_ALRT', 'Hello My Dear Friends ❤️')
