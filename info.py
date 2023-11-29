@@ -41,8 +41,8 @@ JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
 # MongoDB information
 DATABASE_URL = environ.get('DATABASE_URL', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "storefile")
-FILE_DB_URL = environ.get("FILE_DB_URL", DATABASE_URL)
-FILE_DB_NAME = environ.get("FILE_DB_NAME", DATABASE_NAME)
+#FILE_DB_URL = environ.get("FILE_DB_URL", DATABASE_URL)
+#FILE_DB_NAME = environ.get("FILE_DB_NAME", DATABASE_NAME)
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Filters Configuration 
