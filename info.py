@@ -11,9 +11,9 @@ def is_enabled(value, default):
 
 
 # PyroClient Setup 
-API_ID = int(environ['API_ID'])
-API_HASH = environ['API_HASH']
-BOT_TOKEN = environ['BOT_TOKEN']
+API_ID = int(environ.get('API_ID', '23565903'))
+API_HASH = environ.get('API_HASH', '2a87af806641e62069aac6fb658675d6')
+BOT_TOKEN = environ.get('BOT_TOKEN', "6157815838:AAFQYzl6doyrs3Ivm8YOXNBj2C8pZf404h4")
 
 # Bot settings
 WEBHOOK = bool(environ.get("WEBHOOK", True)) # for web support on/off
@@ -22,12 +22,12 @@ UPTIME = time.time()
 
 # Admins, Channels & Users
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '2020224264').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
-auth_channel = environ.get("AUTH_CHANNEL", '-1002037410771')
+# PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
+auth_channel = environ.get('AUTH_CHANNEL', '-1002037410771')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
@@ -39,8 +39,8 @@ REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL)
 JOIN_REQS_DB = environ.get("JOIN_REQS_DB", 'DATABASE_URL')
 
 # MongoDB information
-DATABASE_URL = environ.get('DATABASE_URL', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "storefile")
+DATABASE_URL = environ.get('DATABASE_URL', "mongodb+srv://FREE_FIRE001:FREE_FIRE001@cluster0.d0wqqku.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 #FILE_DB_URL = environ.get("FILE_DB_URL", DATABASE_URL)
 #FILE_DB_NAME = environ.get("FILE_DB_NAME", DATABASE_NAME)
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
